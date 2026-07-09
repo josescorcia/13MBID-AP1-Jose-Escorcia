@@ -7,8 +7,10 @@ stages:
       - data/raw/datos_creditos.csv
       - data/raw/datos_tarjetas.csv
     outs:
-      - reports/figures
-      - reports/resumen_datos.md
+      - reports/figures:
+          cache: false
+      - reports/resumen_datos.md:
+          cache: false
 
   validacion_calidad:
     cmd: python src/validar_calidad.py
@@ -18,9 +20,12 @@ stages:
       - data/raw/datos_creditos.csv
       - data/raw/datos_tarjetas.csv
     outs:
-      - reports/calidad_datos.md
-      - reports/calidad_datos.json
-      - reports/calidad_datos.csv
+      - reports/calidad_datos.md:
+          cache: false
+      - reports/calidad_datos.json:
+          cache: false
+      - reports/calidad_datos.csv:
+          cache: false
 
   preparacion_datos:
     cmd: python src/preparar_datos.py
@@ -31,5 +36,48 @@ stages:
       - data/raw/datos_tarjetas.csv
       - reports/calidad_datos.md
     outs:
+      - data/processed/datos_integrados.csv:
+          cache: false
+      - reports/preparacion_datos.md:
+          cache: false
+
+  modelado:
+    cmd: python src/entrenar_modelos.py
+    deps:
+      - src/entrenar_modelos.py
+      - src/utils.py
       - data/processed/datos_integrados.csv
-      - reports/preparacion_datos.md
+    outs:
+      - models/modelo_mora.pkl:
+          cache: false
+      - models/modelo_metadata.json:
+          cache: false
+      - reports/modelos_comparacion.csv:
+          cache: false
+      - reports/metricas_modelo.json:
+          cache: false
+      - reports/modelado.md:
+          cache: false
+      - reports/model_figures/06_matriz_confusion_modelo.png:
+          cache: false
+      - reports/model_figures/07_comparacion_modelos_f1.png:
+          cache: false
+
+  evaluacion_modelo:
+    cmd: python src/evaluar_modelo.py
+    deps:
+      - src/evaluar_modelo.py
+      - src/utils.py
+      - reports/metricas_modelo.json
+      - models/modelo_mora.pkl
+    outs:
+      - reports/evaluacion_modelo.md:
+          cache: false
+
+  test_modelo:
+    cmd: python -m pytest -q
+    deps:
+      - tests/test_modelo.py
+      - models/modelo_mora.pkl
+      - models/modelo_metadata.json
+      - reports/metricas_modelo.json

@@ -1,0 +1,44 @@
+artifact_path: file:///C:/Users/Administrador/Desktop/ap2_13mbid_entregable/mlruns/695630180952402708/models/m-046078069b7742f68ba19951727bedee/artifacts
+flavors:
+  python_function:
+    env:
+      conda: conda.yaml
+      virtualenv: python_env.yaml
+    loader_module: mlflow.sklearn
+    model_path: model.skops
+    predict_fn: predict
+    python_version: 3.12.10
+  sklearn:
+    code: null
+    pickled_model: model.skops
+    serialization_format: skops
+    sklearn_version: 1.9.0
+    skops_trusted_types: null
+is_signature_from_type_hint: false
+mlflow_version: 3.14.0
+model_id: m-046078069b7742f68ba19951727bedee
+model_size_bytes: 198222
+model_uuid: m-046078069b7742f68ba19951727bedee
+prompts: null
+run_id: 333f1907986a4cde8af551e9fceeb32a
+signature:
+  inputs: '[{"type": "long", "name": "importe_solicitado", "required": true}, {"type":
+    "long", "name": "duracion_credito", "required": true}, {"type": "string", "name":
+    "situacion_vivienda", "required": true}, {"type": "long", "name": "ingresos",
+    "required": true}, {"type": "string", "name": "objetivo_credito", "required":
+    true}, {"type": "double", "name": "pct_ingreso", "required": true}, {"type": "double",
+    "name": "tasa_interes", "required": true}, {"type": "double", "name": "antiguedad_cliente",
+    "required": true}, {"type": "string", "name": "estado_cliente", "required": true},
+    {"type": "double", "name": "gastos_ult_12m", "required": true}, {"type": "string",
+    "name": "genero", "required": true}, {"type": "double", "name": "limite_credito_tc",
+    "required": true}, {"type": "string", "name": "nivel_educativo", "required": true},
+    {"type": "double", "name": "operaciones_ult_12m", "required": true}, {"type":
+    "double", "name": "personas_a_cargo", "required": true}, {"type": "string", "name":
+    "estado_civil_N", "required": true}, {"type": "string", "name": "estado_credito_N",
+    "required": true}, {"type": "string", "name": "antiguedad_empleado_N", "required":
+    true}, {"type": "string", "name": "edad_N", "required": true}, {"type": "double",
+    "name": "ratio_gasto_limite_tc", "required": true}]'
+  outputs: '[{"type": "tensor", "tensor-spec": {"dtype": "int64", "shape": [-1]}}]'
+  params: null
+type_hint_from_example: false
+utc_time_created: '2026-07-09 14:05:29.726625'

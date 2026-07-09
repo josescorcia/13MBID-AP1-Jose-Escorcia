@@ -1,0 +1,81 @@
+{
+  "model_path": "models/modelo_mora.pkl",
+  "target": "falta_pago",
+  "best_model": "LogisticRegression",
+  "feature_columns": [
+    "importe_solicitado",
+    "duracion_credito",
+    "situacion_vivienda",
+    "ingresos",
+    "objetivo_credito",
+    "pct_ingreso",
+    "tasa_interes",
+    "antiguedad_cliente",
+    "estado_cliente",
+    "gastos_ult_12m",
+    "genero",
+    "limite_credito_tc",
+    "nivel_educativo",
+    "operaciones_ult_12m",
+    "personas_a_cargo",
+    "estado_civil_N",
+    "estado_credito_N",
+    "antiguedad_empleado_N",
+    "edad_N",
+    "ratio_gasto_limite_tc"
+  ],
+  "numeric_columns": [
+    "importe_solicitado",
+    "duracion_credito",
+    "ingresos",
+    "pct_ingreso",
+    "tasa_interes",
+    "antiguedad_cliente",
+    "gastos_ult_12m",
+    "limite_credito_tc",
+    "operaciones_ult_12m",
+    "personas_a_cargo",
+    "ratio_gasto_limite_tc"
+  ],
+  "categorical_columns": [
+    "situacion_vivienda",
+    "objetivo_credito",
+    "estado_cliente",
+    "genero",
+    "nivel_educativo",
+    "estado_civil_N",
+    "estado_credito_N",
+    "antiguedad_empleado_N",
+    "edad_N"
+  ],
+  "class_mapping": {
+    "N": 0,
+    "Y": 1
+  },
+  "prediction_mapping": {
+    "0": "N",
+    "1": "Y"
+  },
+  "example_record": {
+    "importe_solicitado": 35000,
+    "duracion_credito": 3,
+    "situacion_vivienda": "ALQUILER",
+    "ingresos": 59000,
+    "objetivo_credito": "PERSONAL",
+    "pct_ingreso": 0.59,
+    "tasa_interes": 16.02,
+    "antiguedad_cliente": 36.0,
+    "estado_cliente": "ACTIVO",
+    "gastos_ult_12m": 1088.0,
+    "genero": "M",
+    "limite_credito_tc": 4010.0,
+    "nivel_educativo": "UNIVERSITARIO_COMPLETO",
+    "operaciones_ult_12m": 24.0,
+    "personas_a_cargo": 2.0,
+    "estado_civil_N": "C",
+    "estado_credito_N": "C",
+    "antiguedad_empleado_N": "sin_categoria",
+    "edad_N": "menor_25",
+    "ratio_gasto_limite_tc": 0.2713216957605985
+  }
+}

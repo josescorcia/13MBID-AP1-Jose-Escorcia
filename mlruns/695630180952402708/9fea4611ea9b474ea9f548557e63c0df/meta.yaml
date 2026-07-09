@@ -1,0 +1,14 @@
+artifact_uri: file:///C:/Users/Administrador/Desktop/ap2_13mbid_entregable/mlruns/695630180952402708/9fea4611ea9b474ea9f548557e63c0df/artifacts
+end_time: 1783605926788
+entry_point_name: ''
+experiment_id: '695630180952402708'
+lifecycle_stage: active
+run_id: 9fea4611ea9b474ea9f548557e63c0df
+run_name: LinearSVC
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1783605926695
+status: 3
+tags: []
+user_id: Administrador

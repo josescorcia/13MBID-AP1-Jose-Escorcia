@@ -1,0 +1,10 @@
+artifact_location: file:///C:/Users/Administrador/Desktop/ap2_13mbid_entregable/mlruns/695630180952402708/models/m-046078069b7742f68ba19951727bedee/artifacts
+creation_timestamp: 1783605929637
+experiment_id: '695630180952402708'
+last_updated_timestamp: 1783605936920
+model_id: m-046078069b7742f68ba19951727bedee
+model_type: null
+name: modelo_final
+source_run_id: 333f1907986a4cde8af551e9fceeb32a
+status: 2
+status_message: null

@@ -13,8 +13,8 @@ stages:
       size: 845190
     - path: src/generar_visualizaciones.py
       hash: md5
-      md5: af3f6de16f9df0b4fd2c8a4c1c6a97bb
-      size: 5437
+      md5: 3b683451709a6bbb9e17a552ef2fec7b
+      size: 5301
     - path: src/utils.py
       hash: md5
       md5: a2d6133e38351bd8c5b0b9ecc231f934
@@ -93,3 +93,90 @@ stages:
       hash: md5
       md5: de2c487ac9b7d2bae37c2c05bde43ac3
       size: 1153
+  modelado:
+    cmd: python src/entrenar_modelos.py
+    deps:
+    - path: data/processed/datos_integrados.csv
+      hash: md5
+      md5: 306ebb533f2ac49f6e7bd8e6ca4a718e
+      size: 1400264
+    - path: src/entrenar_modelos.py
+      hash: md5
+      md5: 1cb948d8941f9071f83dd639f6f6a3b6
+      size: 14913
+    - path: src/utils.py
+      hash: md5
+      md5: a2d6133e38351bd8c5b0b9ecc231f934
+      size: 562
+    outs:
+    - path: models/modelo_metadata.json
+      hash: md5
+      md5: 42e76e226d518e9fc0b0befe6b24bfd4
+      size: 1961
+    - path: models/modelo_mora.pkl
+      hash: md5
+      md5: cb1eb742bc6173b2c3a9967b6cffd8b1
+      size: 6742
+    - path: reports/metricas_modelo.json
+      hash: md5
+      md5: 45e1785a9a59cd09a288dd7a1f287d40
+      size: 1785
+    - path: reports/model_figures/06_matriz_confusion_modelo.png
+      hash: md5
+      md5: 80e7804befa9a11739388ca46035ae6b
+      size: 30672
+    - path: reports/model_figures/07_comparacion_modelos_f1.png
+      hash: md5
+      md5: cc668f693d2742d5e5dc3700724ad2c1
+      size: 37020
+    - path: reports/modelado.md
+      hash: md5
+      md5: d4ce380a324c3b038aed2bd19f7d2eef
+      size: 2285
+    - path: reports/modelos_comparacion.csv
+      hash: md5
+      md5: d699b2efb5acd1a39c0c975d0bde7a64
+      size: 1247
+  evaluacion_modelo:
+    cmd: python src/evaluar_modelo.py
+    deps:
+    - path: models/modelo_mora.pkl
+      hash: md5
+      md5: cb1eb742bc6173b2c3a9967b6cffd8b1
+      size: 6742
+    - path: reports/metricas_modelo.json
+      hash: md5
+      md5: 45e1785a9a59cd09a288dd7a1f287d40
+      size: 1785
+    - path: src/evaluar_modelo.py
+      hash: md5
+      md5: df8f5c646ef0915d0b54a56b68864427
+      size: 2384
+    - path: src/utils.py
+      hash: md5
+      md5: a2d6133e38351bd8c5b0b9ecc231f934
+      size: 562
+    outs:
+    - path: reports/evaluacion_modelo.md
+      hash: md5
+      md5: ee7fa7a2141fa0de5b790147a4123b00
+      size: 1004
+  test_modelo:
+    cmd: python -m pytest -q
+    deps:
+    - path: models/modelo_metadata.json
+      hash: md5
+      md5: 42e76e226d518e9fc0b0befe6b24bfd4
+      size: 1961
+    - path: models/modelo_mora.pkl
+      hash: md5
+      md5: cb1eb742bc6173b2c3a9967b6cffd8b1
+      size: 6742
+    - path: reports/metricas_modelo.json
+      hash: md5
+      md5: 45e1785a9a59cd09a288dd7a1f287d40
+      size: 1785
+    - path: tests/test_modelo.py
+      hash: md5
+      md5: 67a3dd135d694a5bb2da0f5be4d910e1
+      size: 1135

@@ -1,0 +1,14 @@
+artifact_uri: file:///C:/Users/Administrador/Desktop/ap2_13mbid_entregable/mlruns/695630180952402708/41aae87e367b43f09eda54a054675074/artifacts
+end_time: 1783605928565
+entry_point_name: ''
+experiment_id: '695630180952402708'
+lifecycle_stage: active
+run_id: 41aae87e367b43f09eda54a054675074
+run_name: KNeighborsClassifier
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1783605928492
+status: 3
+tags: []
+user_id: Administrador

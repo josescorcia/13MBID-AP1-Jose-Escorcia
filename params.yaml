@@ -3,9 +3,10 @@ paths:
   tarjetas: data/raw/datos_tarjetas.csv
   processed: data/processed/datos_integrados.csv
   figures_dir: reports/figures
+  summary_report: reports/resumen_datos.md
   quality_report: reports/calidad_datos.md
   quality_json: reports/calidad_datos.json
-  summary_report: reports/resumen_datos.md
+
 quality_thresholds:
   max_missing_pct_creditos: 0.10
   max_missing_pct_tarjetas: 0.00
@@ -13,3 +14,12 @@ quality_thresholds:
   min_age: 18
   max_age: 90
   max_pct_ingreso_diff: 0.02
+
+modeling:
+  target: falta_pago
+  random_state: 42
+  test_size: 0.20
+  balancing_method: undersampling
+  primary_metric: test_f1_macro
+  min_test_f1_macro: 0.55
+  min_test_recall_macro: 0.55

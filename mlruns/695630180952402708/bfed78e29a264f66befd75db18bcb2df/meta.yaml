@@ -1,0 +1,14 @@
+artifact_uri: file:///C:/Users/Administrador/Desktop/ap2_13mbid_entregable/mlruns/695630180952402708/bfed78e29a264f66befd75db18bcb2df/artifacts
+end_time: 1783605505896
+entry_point_name: ''
+experiment_id: '695630180952402708'
+lifecycle_stage: active
+run_id: bfed78e29a264f66befd75db18bcb2df
+run_name: LogisticRegression
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1783605505742
+status: 3
+tags: []
+user_id: Administrador

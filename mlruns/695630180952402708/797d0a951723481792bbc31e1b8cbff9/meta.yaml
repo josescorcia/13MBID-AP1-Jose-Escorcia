@@ -1,0 +1,14 @@
+artifact_uri: file:///C:/Users/Administrador/Desktop/ap2_13mbid_entregable/mlruns/695630180952402708/797d0a951723481792bbc31e1b8cbff9/artifacts
+end_time: 1783605928789
+entry_point_name: ''
+experiment_id: '695630180952402708'
+lifecycle_stage: active
+run_id: 797d0a951723481792bbc31e1b8cbff9
+run_name: DecisionTreeClassifier
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1783605928727
+status: 3
+tags: []
+user_id: Administrador
