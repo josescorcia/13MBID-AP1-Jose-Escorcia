@@ -1,0 +1,95 @@
+schema: '2.0'
+stages:
+  visualizacion:
+    cmd: python src/generar_visualizaciones.py
+    deps:
+    - path: data/raw/datos_creditos.csv
+      hash: md5
+      md5: 3b26edd22e8827f890d7cd32efe475b7
+      size: 663047
+    - path: data/raw/datos_tarjetas.csv
+      hash: md5
+      md5: 9e197c893925601cd447c81256e8cf07
+      size: 845190
+    - path: src/generar_visualizaciones.py
+      hash: md5
+      md5: af3f6de16f9df0b4fd2c8a4c1c6a97bb
+      size: 5437
+    - path: src/utils.py
+      hash: md5
+      md5: a2d6133e38351bd8c5b0b9ecc231f934
+      size: 562
+    outs:
+    - path: reports/figures
+      hash: md5
+      md5: ad1bd9bdc28ab5e95518e680c475cc97.dir
+      size: 273942
+      nfiles: 5
+    - path: reports/resumen_datos.md
+      hash: md5
+      md5: 682b3e009ef731954368e65b5682a5e2
+      size: 1643
+  validacion_calidad:
+    cmd: python src/validar_calidad.py
+    deps:
+    - path: data/raw/datos_creditos.csv
+      hash: md5
+      md5: 3b26edd22e8827f890d7cd32efe475b7
+      size: 663047
+    - path: data/raw/datos_tarjetas.csv
+      hash: md5
+      md5: 9e197c893925601cd447c81256e8cf07
+      size: 845190
+    - path: src/utils.py
+      hash: md5
+      md5: a2d6133e38351bd8c5b0b9ecc231f934
+      size: 562
+    - path: src/validar_calidad.py
+      hash: md5
+      md5: 208b0bb27f0c98940f937c974596ced9
+      size: 7936
+    outs:
+    - path: reports/calidad_datos.csv
+      hash: md5
+      md5: c0a9c5188b179769a2db1cb1e046dbc0
+      size: 1966
+    - path: reports/calidad_datos.json
+      hash: md5
+      md5: 843e2238c9f5cc69a41e493537d30753
+      size: 4275
+    - path: reports/calidad_datos.md
+      hash: md5
+      md5: 09fddb0a65f184fb8583ea9754a98ae8
+      size: 5194
+  preparacion_datos:
+    cmd: python src/preparar_datos.py
+    deps:
+    - path: data/raw/datos_creditos.csv
+      hash: md5
+      md5: 3b26edd22e8827f890d7cd32efe475b7
+      size: 663047
+    - path: data/raw/datos_tarjetas.csv
+      hash: md5
+      md5: 9e197c893925601cd447c81256e8cf07
+      size: 845190
+    - path: reports/calidad_datos.md
+      hash: md5
+      md5: 09fddb0a65f184fb8583ea9754a98ae8
+      size: 5194
+    - path: src/preparar_datos.py
+      hash: md5
+      md5: cecd51859683c8f530b5a39e6ae2855a
+      size: 4809
+    - path: src/utils.py
+      hash: md5
+      md5: a2d6133e38351bd8c5b0b9ecc231f934
+      size: 562
+    outs:
+    - path: data/processed/datos_integrados.csv
+      hash: md5
+      md5: 306ebb533f2ac49f6e7bd8e6ca4a718e
+      size: 1400264
+    - path: reports/preparacion_datos.md
+      hash: md5
+      md5: de2c487ac9b7d2bae37c2c05bde43ac3
+      size: 1153

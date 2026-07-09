@@ -1,0 +1,152 @@
+[
+  {
+    "dimension": "Completitud estructural",
+    "regla": "Columnas esperadas en créditos",
+    "resultado": "OK",
+    "errores": 0,
+    "total": 12,
+    "tasa_error": 0.0,
+    "umbral": 0.0,
+    "observacion": "Faltantes: []"
+  },
+  {
+    "dimension": "Completitud estructural",
+    "regla": "Columnas esperadas en tarjetas",
+    "resultado": "OK",
+    "errores": 0,
+    "total": 11,
+    "tasa_error": 0.0,
+    "umbral": 0.0,
+    "observacion": "Faltantes: []"
+  },
+  {
+    "dimension": "Completitud",
+    "regla": "Valores nulos en créditos",
+    "resultado": "OK",
+    "errores": 1249,
+    "total": 121524,
+    "tasa_error": 0.010278,
+    "umbral": 0.1,
+    "observacion": "Se aceptan nulos controlados en antiguedad_empleado y tasa_interes para decidir tratamiento posterior."
+  },
+  {
+    "dimension": "Completitud",
+    "regla": "Valores nulos en tarjetas",
+    "resultado": "OK",
+    "errores": 0,
+    "total": 111397,
+    "tasa_error": 0.0,
+    "umbral": 0.0,
+    "observacion": "No se esperan nulos en los atributos de tarjetas."
+  },
+  {
+    "dimension": "Unicidad",
+    "regla": "id_cliente único en créditos",
+    "resultado": "OK",
+    "errores": 0,
+    "total": 10127,
+    "tasa_error": 0.0,
+    "umbral": 0.0,
+    "observacion": "Cada fila debe representar un cliente/crédito sin duplicidad del identificador."
+  },
+  {
+    "dimension": "Unicidad",
+    "regla": "id_cliente único en tarjetas",
+    "resultado": "OK",
+    "errores": 0,
+    "total": 10127,
+    "tasa_error": 0.0,
+    "umbral": 0.0,
+    "observacion": "Cada cliente debe aparecer una sola vez en datos de tarjetas."
+  },
+  {
+    "dimension": "Consistencia",
+    "regla": "Integridad referencial entre créditos y tarjetas",
+    "resultado": "OK",
+    "errores": 0,
+    "total": 10127,
+    "tasa_error": 0.0,
+    "umbral": 0.0,
+    "observacion": "Todos los clientes de créditos deben tener información de tarjetas y viceversa."
+  },
+  {
+    "dimension": "Validez",
+    "regla": "Edad entre 18 y 90 años",
+    "resultado": "OK",
+    "errores": 4,
+    "total": 10127,
+    "tasa_error": 0.000395,
+    "umbral": 0.01,
+    "observacion": "Los registros fuera de rango se consideran candidatos a filtrado por posible error o atípico extremo."
+  },
+  {
+    "dimension": "Validez",
+    "regla": "Antigüedad de empleado entre 0 y 50 años o nula",
+    "resultado": "OK",
+    "errores": 2,
+    "total": 10127,
+    "tasa_error": 0.000197,
+    "umbral": 0.01,
+    "observacion": "La antigüedad de empleado muy elevada se considera inconsistente con el dominio del problema."
+  },
+  {
+    "dimension": "Validez",
+    "regla": "pct_ingreso entre 0 y 1",
+    "resultado": "OK",
+    "errores": 0,
+    "total": 10127,
+    "tasa_error": 0.0,
+    "umbral": 0.0,
+    "observacion": "La proporción del ingreso no debe estar fuera del intervalo [0,1]."
+  },
+  {
+    "dimension": "Consistencia",
+    "regla": "pct_ingreso coherente con importe_solicitado/ingresos",
+    "resultado": "OK",
+    "errores": 37,
+    "total": 10127,
+    "tasa_error": 0.003654,
+    "umbral": 0.01,
+    "observacion": "Se permite diferencia por redondeo de hasta 0,02."
+  },
+  {
+    "dimension": "Validez",
+    "regla": "estado_credito binario {0,1}",
+    "resultado": "OK",
+    "errores": 0,
+    "total": 10127,
+    "tasa_error": 0.0,
+    "umbral": 0.0,
+    "observacion": "Solo se aceptan valores 0 y 1."
+  },
+  {
+    "dimension": "Validez",
+    "regla": "falta_pago en {Y,N}",
+    "resultado": "OK",
+    "errores": 0,
+    "total": 10127,
+    "tasa_error": 0.0,
+    "umbral": 0.0,
+    "observacion": "Variable objetivo con codificación esperada."
+  },
+  {
+    "dimension": "Validez",
+    "regla": "Importes financieros no negativos en tarjetas",
+    "resultado": "OK",
+    "errores": 0,
+    "total": 20254,
+    "tasa_error": 0.0,
+    "umbral": 0.0,
+    "observacion": "Gastos y límites no deben ser negativos."
+  },
+  {
+    "dimension": "Validez",
+    "regla": "personas_a_cargo entre 0 y 10",
+    "resultado": "OK",
+    "errores": 0,
+    "total": 10127,
+    "tasa_error": 0.0,
+    "umbral": 0.0,
+    "observacion": "Rango razonable para dependientes declarados."
+  }
+]

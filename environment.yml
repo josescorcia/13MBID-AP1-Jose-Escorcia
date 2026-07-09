@@ -1,0 +1,13 @@
+name: 13mbid-ap1
+channels:
+  - conda-forge
+dependencies:
+  - python=3.11
+  - pandas
+  - numpy
+  - matplotlib
+  - pytest
+  - pyyaml
+  - pip
+  - pip:
+      - dvc

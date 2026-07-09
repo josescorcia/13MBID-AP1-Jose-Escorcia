@@ -1,0 +1,35 @@
+stages:
+  visualizacion:
+    cmd: python src/generar_visualizaciones.py
+    deps:
+      - src/generar_visualizaciones.py
+      - src/utils.py
+      - data/raw/datos_creditos.csv
+      - data/raw/datos_tarjetas.csv
+    outs:
+      - reports/figures
+      - reports/resumen_datos.md
+
+  validacion_calidad:
+    cmd: python src/validar_calidad.py
+    deps:
+      - src/validar_calidad.py
+      - src/utils.py
+      - data/raw/datos_creditos.csv
+      - data/raw/datos_tarjetas.csv
+    outs:
+      - reports/calidad_datos.md
+      - reports/calidad_datos.json
+      - reports/calidad_datos.csv
+
+  preparacion_datos:
+    cmd: python src/preparar_datos.py
+    deps:
+      - src/preparar_datos.py
+      - src/utils.py
+      - data/raw/datos_creditos.csv
+      - data/raw/datos_tarjetas.csv
+      - reports/calidad_datos.md
+    outs:
+      - data/processed/datos_integrados.csv
+      - reports/preparacion_datos.md
